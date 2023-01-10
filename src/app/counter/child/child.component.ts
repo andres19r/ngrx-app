@@ -18,4 +18,9 @@ export class ChildComponent {
     this.counter /= 2;
     this.changeCounter.emit(this.counter);
   }
+
+  resetGrandChild(newCounter: number) {
+    this.counter = newCounter;
+    this.changeCounter.emit(this.counter);
+  }
 }

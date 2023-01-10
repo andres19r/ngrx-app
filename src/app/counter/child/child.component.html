@@ -7,3 +7,14 @@
     <button (click)="divide()" class="btn btn-info">Divide</button>
   </div>
 </div>
+
+<hr />
+
+<div class="row text-center">
+  <div class="col">
+    <app-grandchild
+      [counter]="counter"
+      (onReset)="resetGrandChild($event)"
+    ></app-grandchild>
+  </div>
+</div>

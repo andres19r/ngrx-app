@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-grandchild',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./grandchild.component.css']
 })
 export class GrandchildComponent {
+  @Input() counter: number = 0;
+  @Output() onReset = new EventEmitter<number>();
 
+  reset() {
+    this.counter = 0;
+    this.onReset.emit(0);
+  }
 }
