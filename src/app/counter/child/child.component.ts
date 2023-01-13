@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducers';
+import * as actions from '../counter.actions';
 
 @Component({
   selector: 'app-child',
@@ -19,10 +20,10 @@ export class ChildComponent implements OnInit {
   }
 
   multiply() {
-    // this.counter *= 2;
+    this.store.dispatch(actions.multiply({ num: 3 }));
   }
 
   divide() {
-    // this.counter /= 2;
+    this.store.dispatch(actions.divide({ num: 2 }));
   }
 }
