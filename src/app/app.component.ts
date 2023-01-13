@@ -15,10 +15,9 @@ export class AppComponent {
   counter: number = 0;
 
   constructor(private store: Store<AppState>) {
-    this.store.subscribe((state) => {
-      console.log(state);
-      this.counter = state.counter
-    });
+    this.store
+      .select('counter')
+      .subscribe((counter) => (this.counter = counter));
   }
 
   increment() {
